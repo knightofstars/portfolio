@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - AW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-transparent">
+
+  <!-- Modal Overlay with Contact Form -->
+  <div class="modal-overlay">
+    <div class="bg-white text-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-lg relative animate-fade-in">
+      <h1 class="text-3xl font-bold text-center mb-2">Contact Me</h1>
+      <p class="text-center text-sm text-gray-500 mb-6">or email me directly at <a href="mailto:example@aw.com" class="text-blue-600 hover:underline">contact@ayushwahane.com</a></p>
+
+      <form action="https://formspree.io/f/maneapgl" method="POST" class="space-y-5">
+        <div>
+          <label for="name" class="block font-semibold mb-1">Name</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="email" class="block font-semibold mb-1">Email</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="message" class="block font-semibold mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all">Send Message</button>
+        </div>
+      </form>
+
+      <!-- Close button -->
+      <button onclick="window.history.back()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl">
+        &times;
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
